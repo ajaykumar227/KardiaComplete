@@ -1,1 +1,243 @@
-<p>enrollment works!</p>
+<div class="home-body my-2">
+  <div class="btn-slide">
+    <button class="one-btn" for="enrollment">1</button>
+    <hr width="120px" />
+    <button class="two-btn" for="dependent">2</button>
+    <hr width="120px" />
+    <button class="three-btn" for="dependent">3</button>
+  </div>
+
+  <div class="mini-headings">
+    <h5>Enrollment</h5>
+    <h5>Profile Set Up</h5>
+    <h5>Shipping Information</h5>
+  </div>
+
+  <h1>KardiaComplete Enrollment</h1>
+  <div class="description-title">
+    Please fill out the required fields below including your dependent’s email
+    so that they can be invited to complete enrollment. You can add up to 3
+    depenents.
+  </div>
+
+  <div class="link-text">
+    <div>
+      Already have a KardiaComplete account?
+      <a href="#">Log In</a>
+    </div>
+
+    <div>
+      Are you enrolling as an dependent?
+      <a href="#">Click here.</a>
+    </div>
+  </div>
+
+  <div class="enroll-info">
+    <div class="enroll-title">
+      <h3>Enrollment Information</h3>
+      <h6>* Required</h6>
+    </div>
+    <div class="enroll-subtext">
+      Please enter the required fields as they are written on your health
+      insurance card.
+    </div>
+  </div>
+
+  <form class="form-container" [formGroup]="enrollForm" (submit)="onSubmit()">
+    <div class="fullName" formGroupName="fullName">
+      <div class="fName">
+        <label for="firstName" class="form-label"
+          >First Name &nbsp;&nbsp;<span class="star">*</span></label
+        >
+        <input
+          type="text"
+          id="firstName"
+          class="form-control"
+          autocomplete="off"
+          formControlName="firstName"
+          required
+        />
+      </div>
+      <div class="lName">
+        <label for="lastName" class="form-label"
+          >Last Name &nbsp;&nbsp;<span class="star">*</span></label
+        >
+        <input
+          type="text"
+          id="lastName"
+          class="form-control"
+          autocomplete="off"
+          formControlName="lastName"
+          required
+        />
+      </div>
+    </div>
+
+    <div>
+      <label for="dob" class="form-label" formate="mm/dd/yyyy"
+        >Date Of Birth &nbsp;&nbsp;<span class="star">*</span></label
+      >
+      <input
+        type="text"
+        id="dob"
+        class="form-control"
+        placeholder="mm/dd/yyyy"
+        autocomplete="off"
+        formControlName="dob"
+        required
+      />
+    </div>
+
+    <div class="email-box">
+      <label for="email" class="form-label"
+        >Email &nbsp;&nbsp;<span class="star">*</span></label
+      >
+      <div>We recommend using a personal email address.</div>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        autocomplete="off"
+        formControlName="email"
+        required
+      />
+      <p
+        *ngIf="enrollForm.controls['email'].errors?.['required'] && enrollForm.controls['email'].touched"
+      >
+        required
+      </p>
+      <p
+        *ngIf="enrollForm.controls['email'].errors?.['email'] && enrollForm.controls['email'].touched"
+        style="color: red"
+      >
+        This email is not valid
+      </p>
+    </div>
+
+    <div>
+      <label for="password" class="form-label"
+        >Password &nbsp;&nbsp;<span class="star">*</span></label
+      >
+      <div class="pwd-box">
+        <input
+          [type]="hide ? 'password' : 'text'"
+          id="password"
+          class="form-control"
+          autocomplete="off"
+          formControlName="password"
+          required
+        /><span class="icon-btn" (click)="onEyeClick()">
+          <i
+            [ngClass]="visiable ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'"
+          ></i>
+        </span>
+      </div>
+
+      <pre>
+        Your Password Must Include:
+        8-20 Characters(No Spaces)
+        At Least One Upper Case Letter
+        At Least One Lower Case Letter
+        At Least One Number
+      </pre>
+    </div>
+
+    <div>
+      <label for="confirmpwd" class="form-label"
+        >Confirm Password &nbsp;&nbsp;<span class="star">*</span></label
+      >
+
+      <div class="pwd-box">
+        <input
+          [type]="hide ? 'password' : 'text'"
+          id="confirmpwd"
+          class="form-control"
+          autocomplete="off"
+          formControlName="confirmPassword"
+          required
+        /><span class="icon-btn" (click)="onEyeClick()">
+          <i
+            [ngClass]="visiable ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'"
+          ></i>
+        </span>
+      </div>
+
+      <pre>
+            Your Password Must Include:
+            8-20 Characters(No Spaces)
+            At Least One Upper Case Letter
+            At Least One Lower Case Letter
+            At Least One Number
+            Password And Confirm Password Should Match
+        </pre
+      >
+    </div>
+
+    <div class="text-start fs-6 fw-bold">
+      Please select the statement(s) below that apply to you. To be eligible for
+      KardiaComplete, you should have received an Atrial Fibrillation
+      diagnosis.&nbsp;&nbsp;<span class="star">*</span>
+    </div>
+
+    <div class="text-start mx-5">
+      <input
+        type="checkbox"
+        id="atrial"
+        formControlName="atrial"
+        required
+      />&nbsp;&nbsp;
+      <label for="atrial">I have Atrial Fibrillation</label>
+    </div>
+
+    <div class="text-start mx-5">
+      <input
+        type="checkbox"
+        id="bloodPressure"
+        formControlName="bloodPressure"
+        required
+      />&nbsp;&nbsp;
+      <label for="bloodPressure">
+        I have Hypertension (High Blood Pressure)</label
+      >
+    </div>
+
+    <div class="text-start">
+      <input
+        type="checkbox"
+        id="ad"
+        formControlName="ad"
+        required
+      />&nbsp;&nbsp;
+      <label for="ad">
+        I consent to receive marketing communications from AliveCor about
+        products and services. I can opt out at anytime, as described in the
+        Privacy Policy.</label
+      >
+    </div>
+
+    <div class="text-start">
+      <input
+        type="checkbox"
+        id="termsAndCon"
+        formControlName="terms"
+        required
+      />&nbsp;&nbsp;
+      <label for="termsAndCon">
+        I agree to the <a href="#">Terms of Service</a> and
+        <a href="#">Privacy Policy</a> &nbsp;&nbsp;
+        <span class="star">*</span></label
+      >
+    </div>
+
+    <div class="createBtn">
+      <button
+        type="submit"
+        value="create account"
+        [disabled]="enrollForm.invalid"
+        [ngClass]="enrollForm.valid ? 'showBtn' : ''"
+      >
+        create account
+      </button>
+    </div>
+  </form>
+</div>

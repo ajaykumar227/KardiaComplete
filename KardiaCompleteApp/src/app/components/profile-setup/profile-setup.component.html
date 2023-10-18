@@ -1,1 +1,88 @@
-<p>profile-setup works!</p>
+<div class="home-body my-2">
+    <div class="btn-slide">
+      <button class="one-btn" for="enrollment">✔</button>
+      <hr width="120px" />
+      <button class="two-btn" for="dependent">2</button>
+      <hr width="120px" />
+      <button class="three-btn" for="dependent">3</button>
+    </div>
+  
+    <div class="mini-headings">
+      <h5>Log In</h5>
+      <h5>Profile Set Up</h5>
+      <h5>Shipping Information</h5>
+    </div>
+  
+    <h1>Create Your Account</h1>
+    <div class="description-title">
+      Take control of your heart health with KardiaComplete.
+    </div>
+  
+  
+    <div class="enroll-info mt-5">
+      <div class="enroll-title">
+        <h3>Profile Information</h3>
+        <h6>* Required</h6>
+      </div>
+      <div class="user-data mt-3">
+        
+          <div>
+            <label class="form-label">First Name  &nbsp;&nbsp;<span class="star">*</span></label>
+          <div>{{ data.fullName.firstName }}</div>
+          
+
+          
+            <label class="form-label">last Name  &nbsp;&nbsp;<span class="star">*</span></label>
+          <div>{{ data.fullName.lastName }}</div>
+          </div>
+
+          <div>
+            <label class="form-label">Date Of Birth  &nbsp;&nbsp;<span class="star">*</span></label>
+          <div>{{ data.dob }}</div>
+          </div>
+            
+          
+        
+      </div>
+    </div>
+  
+    <form class="form-container" >
+      <div>
+        <mat-form-field>
+          <mat-label>Height&nbsp;&nbsp;<span class="star">*</span></mat-label>
+          <mat-select appearance="outline">
+            <mat-option></mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-select appearance="outline">
+            <mat-option></mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field>
+        <mat-label>Your Sex&nbsp;&nbsp;<span class="star">*</span></mat-label>
+        <mat-select appearance="outline">
+          <mat-option></mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div><i class="fa-regular fa-circle-question"></i>Why do we ask?</div>
+
+      <mat-form-field>
+        <mat-label>Your Race</mat-label>
+        <mat-select appearance="outline">
+          <mat-option></mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div><i class="fa-regular fa-circle-question"></i>Why do we ask?</div>
+
+      <div class="createBtn">
+        <button type="submit" value="create account" 
+        >create account</button>
+      </div>
+    </form>
+  </div>
+  
+  

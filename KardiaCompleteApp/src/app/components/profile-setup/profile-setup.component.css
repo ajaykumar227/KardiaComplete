@@ -1,0 +1,176 @@
+.home-body {
+    background-color: #edf3fa;
+    width: 100%;
+    height: 290vh;
+    text-align: center;
+    border-bottom: 3px solid blue;
+}
+
+.btn-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 50px;
+}
+
+.btn-slide button {
+    border-radius: 50%;
+    font-size: 0.9em;
+    border: 3px solid #dbd8d8;
+    color: #fff;
+    padding: 0px 6px;
+}
+
+.btn-slide .one-btn {
+    background-color: rgb(6, 6, 156);
+}
+
+.btn-slide .two-btn {
+    background-color: rgb(142, 142, 145);
+}
+
+.btn-slide .three-btn {
+    background-color: rgb(142, 142, 145);
+}
+
+.mini-headings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 38px;
+    padding-top: 20px;
+    margin-left: 400px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    width: 480px;
+}
+
+.description-title {
+    width: 62%;
+    font-weight: 400;
+    font-size: 1.3em;
+    margin-left: 250px;
+    text-shadow: 1px 1px 0px black;
+}
+
+
+
+.enroll-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 300px;
+}
+
+.enroll-title h3 {
+    margin-left: 20px;
+}
+
+.enroll-title h6 {
+    color: red;
+    font-size: 0.8em;
+}
+
+.enroll-info .user-data {
+    font-size: 18px;
+    padding-bottom: 50px;
+}
+
+.user-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 500px;
+    margin: auto;
+
+}
+
+.user-data div {}
+
+.form-label {
+    text-align: left;
+}
+
+
+.form-container {
+    width: 650px;
+    margin: auto;
+}
+
+.form-container>div {
+    padding-bottom: 30px;
+}
+
+.fullName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fName {
+    width: 50%;
+}
+
+.lName {
+    width: 50%;
+}
+
+.form-label {
+    float: left;
+}
+
+.email-box div {
+    clear: both;
+    float: left;
+    color: #969393;
+    padding-bottom: 10px;
+}
+
+.pwd-box {
+    width: 100%;
+    position: relative;
+
+}
+
+.pwd-box input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.pwd-box button {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    margin-top: 35px;
+    border: none;
+    background-color: #fff;
+    text-align: center;
+}
+
+pre {
+    text-align: start;
+    width: 500px;
+}
+
+.createBtn button {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    /* background-color: #969393;
+    color: #dbd8d8; */
+    text-transform: uppercase;
+    padding: 8px 0px;
+}
+
+.showBtn {
+    background-color: blue;
+    color: #fff;
+}
+
+
+.star {
+    color: red;
+    font-weight: bold;
+}
